@@ -1,6 +1,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import userRoute from "./routes/userRoute.js";
+import todoRoutes from "./routes/todoRoute.js";
 
 const app = express();
 
@@ -14,5 +15,6 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/v1/user", userRoute);
+app.use("/api/v1/todo", todoRoutes);
 
 export default app;

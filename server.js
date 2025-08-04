@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
-const app = require("./index.js");
-const dotenv = require("dotenv");
+import mongoose from "mongoose";
+import app from "./index.js";
+import dotenv from "dotenv";
 dotenv.config();
 
 const DB = process.env.MONGODB_URL;

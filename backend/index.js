@@ -8,7 +8,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://mern-todo-10j7t0ijj-basawarajs-projects.vercel.app",
+    origin: "https://mern-todo-pujt2f5le-basawarajs-projects.vercel.app",
     credentials: true,
   })
 );

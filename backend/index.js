@@ -8,7 +8,10 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://mern-todo-45l20k4tr-basawarajs-projects.vercel.app",
+    origin: [
+      "https://mern-todo-45l20k4tr-basawarajs-projects.vercel.app",
+      "http://localhost:3000",
+    ],
     credentials: true,
   })
 );

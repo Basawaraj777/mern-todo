@@ -4,9 +4,10 @@ import { toast } from "react-toastify";
 import { Input } from "../components/Input.js";
 import { Button } from "../components/button.js";
 import { useAuth } from "../context/AuthContext.js";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const { login } = useAuth(); // from AuthContext
   const [formData, setFormData] = useState({
     email: "",
@@ -183,7 +184,7 @@ const Login = () => {
                 Don&apos;t have an account?
                 <span
                   className="text-blue-600 hover:text-blue-700 cursor-pointer font-medium ml-1"
-                  onClick={() => Navigate("/signup")}
+                  onClick={() => navigate("/signup")}
                 >
                   Sign up
                 </span>

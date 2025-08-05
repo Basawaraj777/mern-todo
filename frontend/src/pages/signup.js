@@ -4,9 +4,11 @@ import { toast } from "react-toastify";
 import { Input } from "../components/Input.js";
 import { Button } from "../components/button.js";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext.js";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const { login } = useAuth(); // from AuthContext
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -49,6 +51,7 @@ const Signup = () => {
         { withCredentials: true }
       );
 
+      login(res.data.token);
       localStorage.setItem("token", res.data.token);
       console.log(res);
 
@@ -59,8 +62,7 @@ const Signup = () => {
         password: "",
         confirmPassword: "",
       });
-
-      navigate("/"); // ✅ fixed this
+      navigate("/");
     } catch (err) {
       console.log(err);
 

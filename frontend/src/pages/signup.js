@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { Input } from "../components/Input.js";
 import { Button } from "../components/button.js";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -49,6 +49,7 @@ const Signup = () => {
         { withCredentials: true }
       );
       localStorage.setItem("token", res.data.token);
+      Navigate("/"); //
       toast.success("Signup successful! 🎉");
       // Optional: reset form
       setFormData({

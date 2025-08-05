@@ -56,9 +56,9 @@ const Login = () => {
           {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-6">
             <h2 className="text-2xl font-bold text-white text-center">
-              Welcome Back
+              Welcome Back...
             </h2>
-            <p className="text-blue-500 text-center text-sm mt-1">
+            <p className="text-blue-100 text-center text-sm mt-1">
               Sign in to your account
             </p>
           </div>

@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { Input } from "../components/Input.js";
 import { Button } from "../components/button.js";
 import { useAuth } from "../context/AuthContext.js";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -182,12 +182,12 @@ const Login = () => {
             <div className="mt-6 text-center">
               <p className="text-gray-600 text-sm">
                 Don&apos;t have an account?
-                <span
-                  className="text-blue-600 hover:text-blue-700 cursor-pointer font-medium ml-1"
-                  onClick={() => navigate("/signup")}
+                <Link
+                  to="/signup"
+                  className="text-blue-600 hover:text-blue-700 font-medium ml-1"
                 >
                   Sign up
-                </span>
+                </Link>
               </p>
             </div>
           </div>

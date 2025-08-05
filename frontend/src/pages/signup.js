@@ -3,8 +3,10 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { Input } from "../components/Input.js";
 import { Button } from "../components/button.js";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -213,8 +215,11 @@ const Signup = () => {
             <div className="mt-6 text-center">
               <p className="text-gray-600 text-sm">
                 Already have an account?
-                <span className="text-blue-600 hover:text-blue-700 cursor-pointer font-medium ml-1">
-                  Sign in
+                <span
+                  className="text-blue-600 hover:text-blue-700 cursor-pointer font-medium ml-1"
+                  onClick={() => navigate("/login")}
+                >
+                  Log in
                 </span>
               </p>
             </div>

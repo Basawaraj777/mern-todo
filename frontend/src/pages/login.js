@@ -180,8 +180,11 @@ const Login = () => {
             {/* Footer */}
             <div className="mt-6 text-center">
               <p className="text-gray-600 text-sm">
-                Don't have an account?
-                <span className="text-blue-600 hover:text-blue-700 cursor-pointer font-medium ml-1">
+                Don&apos;t have an account?
+                <span
+                  className="text-blue-600 hover:text-blue-700 cursor-pointer font-medium ml-1"
+                  onClick={() => Navigate("/signup")}
+                >
                   Sign up
                 </span>
               </p>

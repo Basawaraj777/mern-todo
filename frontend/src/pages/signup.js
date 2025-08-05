@@ -49,7 +49,7 @@ const Signup = () => {
         { withCredentials: true }
       );
       localStorage.setItem("token", res.data.token);
-      Navigate("/"); //
+
       toast.success("Signup successful! 🎉");
       // Optional: reset form
       setFormData({
@@ -58,6 +58,7 @@ const Signup = () => {
         password: "",
         confirmPassword: "",
       });
+      Navigate("/"); //
     } catch (err) {
       toast.error(err.response?.data?.error || "Signup failed");
     } finally {

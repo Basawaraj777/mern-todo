@@ -8,8 +8,7 @@ const app = express();
 
 app.use(
   cors({
-    origin:
-      "https://mern-todo-git-create-todo-feature-basawarajs-projects.vercel.app",
+    origin: "https://mern-todo-10j7t0ijj-basawarajs-projects.vercel.app",
     credentials: true,
   })
 );

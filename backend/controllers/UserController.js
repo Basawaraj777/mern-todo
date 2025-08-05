@@ -87,3 +87,23 @@ export const protect = async (req, res, next) => {
   res.locals.user = currentUser;
   next();
 };
+
+export const getProfile = async (req, res) => {
+  try {
+    const token = req.cookies?.token;
+    if (!token) {
+      return res.status(401).json({ error: "Unauthorized. Token missing." });
+    }
+
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await User.findById(decoded.id).select("-password");
+
+    if (!user) {
+      return res.status(401).json({ error: "User not found." });
+    }
+
+    res.status(200).json({ user });
+  } catch (err) {
+    return res.status(401).json({ error: "Invalid token." });
+  }
+};

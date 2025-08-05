@@ -41,24 +41,26 @@ const Signup = () => {
     setIsLoading(true);
 
     try {
-      const { name, email, password, confirmPassword } = formData;
+      const { name, email, password } = formData;
 
       const res = await axios.post(
         "https://mern-todo-pslr.onrender.com/api/v1/user/signup",
-        { name, email, password, confirmPassword },
+        { name, email, password },
         { withCredentials: true }
       );
+
       localStorage.setItem("token", res.data.token);
 
       toast.success("Signup successful! 🎉");
-      // Optional: reset form
+
       setFormData({
         name: "",
         email: "",
         password: "",
         confirmPassword: "",
       });
-      Navigate("/"); //
+
+      navigate("/"); // ✅ fixed this
     } catch (err) {
       toast.error(err.response?.data?.error || "Signup failed");
     } finally {
